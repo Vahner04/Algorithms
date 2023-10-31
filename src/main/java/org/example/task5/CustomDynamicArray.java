@@ -109,10 +109,11 @@ public class CustomDynamicArray implements Iterable<Integer> {
     public boolean isEmpty() {
         return count == 0;
     }
+
     @Override
     public Iterator<Integer> iterator() {
         return new Iterator<Integer>() {
-            private int currentIndex = 0;
+             int currentIndex = 0;
 
             @Override
             public boolean hasNext() {
@@ -121,13 +122,11 @@ public class CustomDynamicArray implements Iterable<Integer> {
 
             @Override
             public Integer next() {
-                if (!hasNext()) {
-                    throw new NoSuchElementException();
-                }
                 return data[currentIndex++];
             }
         };
     }
+
     @Override
     public String toString() {
         return "[" + Arrays.stream(data).limit(count).boxed()
