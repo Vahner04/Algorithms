@@ -109,7 +109,7 @@ public class SearchTree {
 
     private int height(Node node) {
         if (node == null) {
-            return 0; // Базовый случай: высота листа (null) равна 0
+            return 0;
         } else {
             int leftHeight = height(node.left);
             int rightHeight = height(node.right);
